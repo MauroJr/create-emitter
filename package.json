@@ -1,0 +1,26 @@
+{
+  "name": "create-emitter",
+  "version": "1.0.0",
+  "description": "event emitter created for projects designed with composition pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MauroJr/create-emitter.git"
+  },
+  "keywords": [
+    "event",
+    "events",
+    "emitter",
+    "composition",
+    "pattern"
+  ],
+  "author": "Mauro Junior",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MauroJr/create-emitter/issues"
+  },
+  "homepage": "https://github.com/MauroJr/create-emitter#readme"
+}
