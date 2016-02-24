@@ -1,6 +1,52 @@
 # create-emitter
 
-#LICENSE
+Event emitter with event router, created for projects designed with composition pattern
+
+## Installation
+
+	npm install create-emitter --save
+
+
+## Usage Example
+
+```javascript
+    'use strict';
+    
+	const Emitter = require('create-emitter'),
+	      emitter = Emitter.create();
+    
+    // just a data example
+    let operation   = 'insert',
+        user        = {id: 22, name: 'John Doe', age: 32};
+    
+    
+    // you can listen with "unnamed" route
+    emitter.on('users:insert|update:*', function (action, id, data) {
+        console.log('action:', action);
+        console.log('id:', id);
+        console.log(data);
+    });
+    
+    emitter.emit(`users:${operation}:${_id}`, user);
+    // action: insert
+    // id: 22
+    // {id: 22, name: 'John Doe', age: 32}
+    
+    
+    
+    // or you can listen with "named" route
+    emitter.on('{collection}:{action=insert|update}:{id}', function (route, data) {
+        console.log(route);
+        console.log(data);
+    });
+    
+    emitter.emit(`users:${operation}:${_id}`, user);
+    // {collection: 'users', action: 'insert', id: 22};
+    // {id: 22, name: 'John Doe', age: 32}
+    
+```
+
+##LICENSE
 The MIT License (MIT)
 
 Copyright (c) 2016 MauroJr
