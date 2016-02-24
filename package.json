@@ -1,5 +1,5 @@
 {
-  "name": "emitter",
+  "name": "create-emitter",
   "version": "1.0.0",
   "description": "Event emitter with event router, created for projects designed with composition pattern",
   "main": "index.js",
