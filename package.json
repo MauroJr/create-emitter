@@ -1,6 +1,6 @@
 {
   "name": "create-emitter",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Event emitter with event router, created for projects designed with composition pattern",
   "main": "index.js",
   "scripts": {
