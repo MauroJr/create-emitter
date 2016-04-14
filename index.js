@@ -27,7 +27,7 @@ function Emitter() {
     
     function once(event, fn) {
         const onceFn = function () {
-            const args = slice.call(arguments, 1);
+            const args = slice.call(arguments);
             
             fn.apply(undefined, args);
             removeListener(event, onceFn);
