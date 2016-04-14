@@ -42,7 +42,7 @@ function Emitter() {
         listeners.forEach(function (listener, i) {
             if (listener.event === event) {
                 if (!fn || listener.fn === fn) {
-                    listener.splice(i, 1);
+                    listeners.splice(i, 1);
                 }
             }
         });
