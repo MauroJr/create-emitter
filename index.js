@@ -9,8 +9,6 @@ module.exports = toFactory(Emitter);
 function Emitter() {
     let listeners = [];
     
-    const ONCE = true;
-    
     return {
         on: addListener,
         addListener,
