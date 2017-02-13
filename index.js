@@ -1,15 +1,16 @@
 'use strict';
 
-const toFactory     = require('tofactory');
 const EventRouter   = require('event-router');
 const slice         = Array.prototype.slice;
 
-module.exports = toFactory(Emitter);
+Emitter.create = () => Emitter();
+
+module.exports = Object.freeze(Emitter);
 
 function Emitter() {
     let listeners = [];
     
-    return {
+    return Object.freeze({
         on: addListener,
         addListener,
         once,
@@ -18,10 +19,10 @@ function Emitter() {
         offAll: removeAllListeners,
         removeAllListeners,
         emit
-    };
+    });
     
     function addListener(event, fn) {
-        let router = EventRouter.create(event);
+        const router = EventRouter.create(event);
         listeners.push({event, router, fn});
     }
     
@@ -37,13 +38,8 @@ function Emitter() {
     }
     
     function removeListener(event, fn) {
-        listeners.forEach(function (listener, i) {
-            if (listener.event === event) {
-                if (!fn || listener.fn === fn) {
-                    listeners.splice(i, 1);
-                }
-            }
-        });
+        listeners = listeners
+            .filter(listener => listener.event !== event || !fn || listener.fn !== fn);
     }
     
     function removeAllListeners() {
@@ -53,11 +49,11 @@ function Emitter() {
     function emit(event) {
         const args = slice.call(arguments, 1);
         
-        listeners.forEach(function (listener) {
+        listeners.forEach((listener) => {
             const result = listener.router.parse(event);
             
             if (!result) return;
-            listener.fn.apply(undefined, result.concat(args));
+            listener.fn(...result.concat(args));
         });
     }
 }

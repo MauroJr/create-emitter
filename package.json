@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/MauroJr/create-emitter#readme",
   "dependencies": {
-    "event-router": "^1.2.0",
-    "tofactory": "^1.1.1"
+    "event-router": "^1.2.0"
   }
 }
