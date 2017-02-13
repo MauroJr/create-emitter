@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engine": ">=4.2.0",
+  "engine": ">=6.9.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MauroJr/create-emitter.git"
