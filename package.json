@@ -4,7 +4,7 @@
   "description": "Event emitter with event router, created for projects designed with composition pattern",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "engine": ">=6.9.0",
   "repository": {
@@ -26,6 +26,15 @@
   },
   "homepage": "https://github.com/MauroJr/create-emitter#readme",
   "dependencies": {
+    "escape-regex": "^1.0.7",
     "event-router": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.2.0",
+    "standard-version": "^4.0.0"
   }
 }
